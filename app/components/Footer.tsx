@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+// import Link from "next/link";
 
 const Footer: React.FC = () => {
   const navigator = useRouter();
