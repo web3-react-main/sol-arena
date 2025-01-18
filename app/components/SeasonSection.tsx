@@ -4,20 +4,34 @@ import Image from "next/image";
 const SeasonSection: React.FC = () => {
   return (
     <>
-      <div className="w-[540px] h-[540px] border flex justify-center items-center relative hover:cursor-pointer">
+      <div className="w-[300px] md:w-[540px] h-[300px] md:h-[540px] flex justify-center items-center relative hover:cursor-pointer overflow-hidden">
         <Image
           src={"/assets/season/rot-circle1.png"}
           alt="rot circle"
           width={540}
           height={540}
-          className=" absolute transition-transform duration-500 animate-spin-slow"
+          className=" hidden md:block absolute transition-transform duration-500 animate-spin-slow"
         />
         <Image
           src={"/assets/season/rot-circle2.png"}
           alt="rot circle"
-          width={285}
-          height={285}
-          className="  absolute transition-transform duration-500 animate-spin-slow-reverse"
+          width={460}
+          height={460}
+          className=" hidden md:block absolute transition-transform duration-500 animate-spin-slow-reverse"
+        />
+        <Image
+          src={"/assets/season/rot-circle-small-1.png"}
+          alt="rot circle"
+          width={311}
+          height={286}
+          className=" block md:hidden absolute transition-transform duration-500 animate-spin-slow"
+        />
+        <Image
+          src={"/assets/season/rot-circle-small-2.png"}
+          alt="rot circle"
+          width={260}
+          height={260}
+          className=" block md:hidden absolute transition-transform duration-500 animate-spin-slow-reverse"
         />
         <div className=" w-[235px] md:w-[410px] h-[235px] md:h-[410px] absolute border-[#FFFFFF] border-[8px] md:border-[10px] rounded-[50%] flex justify-center items-center">
           <div
