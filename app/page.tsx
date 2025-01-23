@@ -8,6 +8,12 @@ import SeasonSection from "./components/SeasonSection";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
 export default function Home() {
   const navigator = useRouter();
   const [isButton, setIsButton] = useState(false);
@@ -27,9 +33,24 @@ export default function Home() {
           className="hero-section w-full bg-center bg-no-repeat mb-[-2px]"
           style={{ backgroundImage: "url('./assets/hero-img.webp')" }}
         >
-          <div className="flex lg:hidden justify-center items-center w-[100%] absolute top-[525px]">
+          <div className=" w-[100%] absolute top-[200px] md:top-[606px] flex flex-col justify-center items-center">
+            <div
+              className=" w-[100%] m-auto h-[356px] font-bold bg-[url('/assets/text_back_1.png')] bg-center bg-no-repeat flex justify-center items-center"
+              style={{ backgroundSize: "100% 100%" }}
+            >
+              <h1 className=" text-center leading-[110%] text-[26px] md:text-[40px] lg:text-[56px] font-[Oswald] text-transparent bg-clip-text bg-gradient-to-b from-[#4EFFFF] to-[#fff] bg-[left_0_bottom_-23px] lg:bg-[left_0_bottom_-35px]">
+                The Race for 150,000,000 $CHILL Has Begun
+              </h1>
+            </div>
+            <div className=" w-[100%] m-auto mt-[-210px] h-[250px] bg-[url('/assets/text_back_2.png')] bg-center bg-no-repeat flex justify-center items-center">
+              <h1 className=" text-center leading-[110%] font-bold text-[20px] md:text-[32px] lg:text-[40px] font-[Oswald] text-transparent bg-clip-text bg-gradient-to-b from-[#4EFFFF] to-[#fff] bg-[left_0_bottom_-23px]">
+                Collect, Extract, Dominate.
+              </h1>
+            </div>
+          </div>
+          <div className="flex justify-center items-center w-[100%] absolute top-[525px] md:top-[974px]">
             <button
-              className=" w-[163px] h-[52px] rounded-md font-bold font-[Oswald] text-[28px] text-[#020215]"
+              className=" w-[163px] h-[52px] md:w-[260px] md:h-[84px] rounded-md font-bold font-[Oswald] text-[28px] text-[#020215]"
               style={{
                 backgroundImage: "url(./assets/play-now-btn.png)",
                 backgroundSize: "100% 100%",
@@ -58,8 +79,8 @@ export default function Home() {
           className="section w-full bg-center"
           style={{ backgroundImage: "url('/assets/features/Features.webp')" }}
         >
-          <div className="max-w-[1440px] m-auto py-0 md:py-[101px] px-0 md:px-[64px] ">
-            <div className=" px-2 overflow-hidden flex flex-row justify-center items-center bg-center bg-opacity-20 bg-[#1919AD] bg-[url('/assets/features/Mask-group.png')] w-full h-[837px] border-0 md:border-8 border-[#41FFC6] rounded-none md:rounded-[56px] shadow-none md:shadow-[0_0_41px_3px_#2600A8] shadow-inner-[0_0_50px_3px_#0095FF] relative">
+          <div className="max-w-[1440px] m-auto py-0 md:py-[101px] px-0 md:px-[64px] overflow-hidden">
+            <div className=" px-2 flex flex-row justify-center items-center bg-center bg-opacity-20 bg-[#1919AD] bg-[url('/assets/features/Mask-group.png')] w-full h-[837px] border-0 md:border-8 border-[#41FFC6] rounded-none md:rounded-[56px] shadow-none md:shadow-[0_0_41px_3px_#2600A8] shadow-inner-[0_0_50px_3px_#0095FF] relative">
               <div
                 className="flex justify-center mr-[-15px] md:mr-0 items-center w-[210px] md:w-[283px] h-10 md:h-[76px] absolute top-[38px] md:top-0 right-[-1px] bg-cover bg-center text-[24px] md:text-[32px] font-black text-[#0A164E] "
                 style={{
@@ -127,7 +148,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className=" block md:hidden">
+              <div className=" hidden md:hidden">
                 <FeaturesSection
                   setCardID={setActiveCardID}
                   id={0}
@@ -221,6 +242,43 @@ export default function Home() {
                     ></div>
                   </div>
                 </div>
+              </div>
+
+              <div className="w-[100%] block md:hidden pt-10">
+                <Swiper
+                  pagination={true}
+                  modules={[Pagination]}
+                  className="cardSlider"
+                  style={{ height: "580px" }}
+                >
+                  <SwiperSlide>
+                    <div className=" flex flex-row justify-center">
+                      <FeaturesSection
+                        setCardID={setActiveCardID}
+                        id={4}
+                        isActive={activeCardID === 4 ? true : false}
+                        featurescolor="#2AD0F4"
+                        featuresborder="#B3F1FF"
+                        featurestop="/assets/features/feature-image-top5.png"
+                        featuresbottom="/assets/features/feature-image-bottom5.png"
+                      />
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=" flex flex-row justify-center">
+                      <FeaturesSection
+                        setCardID={setActiveCardID}
+                        id={4}
+                        isActive={activeCardID === 4 ? true : false}
+                        featurescolor="#2AD0F4"
+                        featuresborder="#B3F1FF"
+                        featurestop="/assets/features/feature-image-top5.png"
+                        featuresbottom="/assets/features/feature-image-bottom5.png"
+                      />
+                    </div>
+                  </SwiperSlide>
+                  
+                </Swiper>
               </div>
             </div>
           </div>
