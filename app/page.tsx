@@ -10,9 +10,12 @@ import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-// Import Swiper styles
+// Import Swipe
 import "swiper/css";
 import "swiper/css/pagination";
+
+
+
 
 export default function Home() {
   const navigator = useRouter();
