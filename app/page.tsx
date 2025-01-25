@@ -10,12 +10,9 @@ import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-// Import Swipe
+// Import Swiper sty
 import "swiper/css";
 import "swiper/css/pagination";
-
-
-
 
 export default function Home() {
   const navigator = useRouter();
@@ -33,27 +30,26 @@ export default function Home() {
     <div className="relative z-0 mt-[72px]">
       <main className="w-full">
         <div
-          className="hero-section w-full bg-center bg-no-repeat mb-[-2px]"
-          style={{ backgroundImage: "url('./assets/hero-img.webp')" }}
+          className="hero-section w-full h-[1024px] bg-center bg-no-repeat mb-[-2px]"
         >
-          <div className=" w-[100%] absolute top-[200px] md:top-[606px] flex flex-col justify-center items-center">
+          <div className=" w-[100%] absolute top-[200px] md:top-[358px] flex flex-col justify-center items-center">
             <div
               className=" w-[100%] m-auto h-[356px] font-bold bg-[url('/assets/text_back_1.png')] bg-center bg-no-repeat flex justify-center items-center"
               style={{ backgroundSize: "100% 100%" }}
             >
-              <h1 className=" text-center leading-[110%] text-[26px] md:text-[40px] lg:text-[56px] font-[Oswald] text-transparent bg-clip-text bg-gradient-to-b from-[#4EFFFF] to-[#fff] bg-[left_0_bottom_-23px] lg:bg-[left_0_bottom_-35px]">
+              <h1 className=" text-center leading-[110%] text-[26px] md:text-[40px] lg:text-[56px] font-[Oswald] text-transparent bg-clip-text bg-gradient-to-b from-[#4EFFFF] to-[#fff] bg-[left_0_bottom_-15px] lg:bg-[left_0_bottom_-35px]">
                 The Race for 150,000,000 $CHILL Has Begun
               </h1>
             </div>
-            <div className=" w-[100%] m-auto mt-[-210px] h-[250px] bg-[url('/assets/text_back_2.png')] bg-center bg-no-repeat flex justify-center items-center">
+            <div className=" w-[100%] m-auto mt-[-230px] sm:mt-[-210px] h-[250px] bg-[url('/assets/text_back_2.png')] bg-center bg-no-repeat flex justify-center items-center">
               <h1 className=" text-center leading-[110%] font-bold text-[20px] md:text-[32px] lg:text-[40px] font-[Oswald] text-transparent bg-clip-text bg-gradient-to-b from-[#4EFFFF] to-[#fff] bg-[left_0_bottom_-23px]">
                 Collect, Extract, Dominate.
               </h1>
             </div>
           </div>
-          <div className="flex justify-center items-center w-[100%] absolute top-[525px] md:top-[974px]">
+          <div className="flex justify-center items-center w-[100%] absolute top-[502px] md:top-[742px]">
             <button
-              className=" w-[163px] h-[52px] md:w-[260px] md:h-[84px] rounded-md font-bold font-[Oswald] text-[28px] text-[#020215]"
+              className=" w-[163px] h-[52px] md:w-[260px] md:h-[84px] rounded-md font-semibold font-[Oswald] text-[28px] text-[#020215]"
               style={{
                 backgroundImage: "url(./assets/play-now-btn.png)",
                 backgroundSize: "100% 100%",
@@ -111,6 +107,9 @@ export default function Home() {
                     featuresborder="#EAD4FF"
                     featurestop="/assets/features/feature-image-top1.png"
                     featuresbottom="/assets/features/feature-image-bottom1.png"
+                    card="/assets/features/card-1.png"
+                    title="Snake Evolved"
+                    desc="Dive into adrenaline-pumping action inspired by Snake. Gather energy, grow stronger, and defeat opponents to loot their noCHILL. Outsmart, outmaneuver, and dominate the Arena!"
                   />
                   <FeaturesSection
                     setCardID={setActiveCardID}
@@ -120,6 +119,9 @@ export default function Home() {
                     featuresborder="#FFFBD4"
                     featurestop="/assets/features/feature-image-top2.png"
                     featuresbottom="/assets/features/feature-image-bottom2.png"
+                    card="/assets/features/card-2.png"
+                    title="Extraction"
+                    desc="Collect noCHILL and extract through wormholes to secure your winnings. But beware—only the clever and quick make it out alive. Will you survive or lose it all?"
                   />
                   <FeaturesSection
                     setCardID={setActiveCardID}
@@ -129,6 +131,10 @@ export default function Home() {
                     featuresborder="#FFFACC"
                     featurestop="/assets/features/feature-image-top3.png"
                     featuresbottom="/assets/features/feature-image-bottom3.png"
+                    card="/assets/features/card-3.png"
+                    title="Game Modes"
+                    desc="Play for noCHILL to climb the leaderboards
+or up the stakes in High Roller Mode to wager and win Solana. Real risk, real rewards."
                   />
                   <FeaturesSection
                     setCardID={setActiveCardID}
@@ -138,6 +144,10 @@ export default function Home() {
                     featuresborder="#B3FFE8"
                     featurestop="/assets/features/feature-image-top4.png"
                     featuresbottom="/assets/features/feature-image-bottom4.png"
+                    card="/assets/features/card-4.png"
+                    title="Power-ups"
+                    desc="Turn the tide with power-ups! 
+Collect mystery boxes to unlock power-ups and use them at just the right moment to crush your enemies."
                   />
                   <FeaturesSection
                     setCardID={setActiveCardID}
@@ -147,11 +157,14 @@ export default function Home() {
                     featuresborder="#B3F1FF"
                     featurestop="/assets/features/feature-image-top5.png"
                     featuresbottom="/assets/features/feature-image-bottom5.png"
+                    card="/assets/features/card-5.png"
+                    title="Team Play"
+                    desc="Join forces with your favorite Solana communities! Pick a team, dominate the competition, and climb the team leaderboards together."
                   />
                 </div>
               </div>
 
-              <div className=" hidden md:hidden">
+              {/* <div className=" hidden md:hidden">
                 <FeaturesSection
                   setCardID={setActiveCardID}
                   id={0}
@@ -245,7 +258,7 @@ export default function Home() {
                     ></div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="w-[100%] block md:hidden pt-10">
                 <Swiper
@@ -258,12 +271,65 @@ export default function Home() {
                     <div className=" flex flex-row justify-center">
                       <FeaturesSection
                         setCardID={setActiveCardID}
-                        id={4}
-                        isActive={activeCardID === 4 ? true : false}
-                        featurescolor="#2AD0F4"
-                        featuresborder="#B3F1FF"
-                        featurestop="/assets/features/feature-image-top5.png"
-                        featuresbottom="/assets/features/feature-image-bottom5.png"
+                        id={0}
+                        isActive={activeCardID === 0 ? true : false}
+                        featurescolor="#8C46FF"
+                        featuresborder="#EAD4FF"
+                        featurestop="/assets/features/feature-image-top1.png"
+                        featuresbottom="/assets/features/feature-image-bottom1.png"
+                        card="/assets/features/card-1.png"
+                        title="Snake Evolved"
+                        desc="Dive into adrenaline-pumping action inspired by Snake. Gather energy, grow stronger, and defeat opponents to loot their noCHILL. Outsmart, outmaneuver, and dominate the Arena!"
+                      />
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=" flex flex-row justify-center">
+                      <FeaturesSection
+                        setCardID={setActiveCardID}
+                        id={1}
+                        isActive={activeCardID === 1 ? true : false}
+                        featurescolor="#EF821D"
+                        featuresborder="#FFFBD4"
+                        featurestop="/assets/features/feature-image-top2.png"
+                        featuresbottom="/assets/features/feature-image-bottom2.png"
+                        card="/assets/features/card-2.png"
+                        title="Extraction"
+                        desc="Collect noCHILL and extract through wormholes to secure your winnings. But beware—only the clever and quick make it out alive. Will you survive or lose it all?"
+                      />
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=" flex flex-row justify-center">
+                      <FeaturesSection
+                        setCardID={setActiveCardID}
+                        id={2}
+                        isActive={activeCardID === 2 ? true : false}
+                        featurescolor="#E6D11D"
+                        featuresborder="#FFFACC"
+                        featurestop="/assets/features/feature-image-top3.png"
+                        featuresbottom="/assets/features/feature-image-bottom3.png"
+                        card="/assets/features/card-3.png"
+                        title="Game Modes"
+                        desc="Play for noCHILL to climb the leaderboards
+or up the stakes in High Roller Mode to wager and win Solana. Real risk, real rewards."
+                      />
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=" flex flex-row justify-center">
+                      <FeaturesSection
+                        setCardID={setActiveCardID}
+                        id={3}
+                        isActive={activeCardID === 3 ? true : false}
+                        featurescolor="#21E6AB"
+                        featuresborder="#B3FFE8"
+                        featurestop="/assets/features/feature-image-top4.png"
+                        featuresbottom="/assets/features/feature-image-bottom4.png"
+                        card="/assets/features/card-4.png"
+                        title="Power-ups"
+                        desc="Turn the tide with power-ups! 
+Collect mystery boxes to unlock power-ups and use them at just the right moment to crush your enemies."
                       />
                     </div>
                   </SwiperSlide>
@@ -277,10 +343,13 @@ export default function Home() {
                         featuresborder="#B3F1FF"
                         featurestop="/assets/features/feature-image-top5.png"
                         featuresbottom="/assets/features/feature-image-bottom5.png"
+                        card="/assets/features/card-5.png"
+                        title="Team Play"
+                        desc="Join forces with your favorite Solana communities! Pick a team, dominate the competition, and climb the team leaderboards together."
                       />
                     </div>
                   </SwiperSlide>
-                  
+
                 </Swiper>
               </div>
             </div>
@@ -305,11 +374,11 @@ export default function Home() {
               <SeasonSection />
             </div>
             <button
-              className="w-[264px] h-[84px] rounded-md font-bold font-[Oswald] text-[38px] text-[#020215]"
+              className="w-[264px] h-[84px] rounded-md font-bold font-[Oswald] text-[34px] text-[#020215]"
               style={{
                 backgroundImage: "url(./assets/play-now-btn.png)",
                 backgroundSize: "100% 100%",
-                boxShadow: "0px 0px 20px 3px",
+                boxShadow: "0px 0px 20px 1px",
               }}
               onClick={() => {
                 navigator.push("/");

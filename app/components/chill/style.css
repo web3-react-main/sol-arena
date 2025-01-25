@@ -1,3 +1,11 @@
 #right-content {
     scroll-behavior: smooth;
 }
+.active {
+    color: #41FFC6;
+}
+#right-bar a {
+    transition: all;
+    transition-delay: 100ms;
+}
+
