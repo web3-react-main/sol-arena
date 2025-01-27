@@ -22,8 +22,8 @@ push-to-artifact-registry:
   script:
     - gcloud auth activate-service-account --key-file=$GCP_SERVICE_KEY
     - gcloud auth configure-docker asia-southeast1-docker.pkg.dev
-    - docker pull $AR_IMAGE:$IMAGE_TAG
-    - docker tag $AR_IMAGE:$IMAGE_TAG $AR_IMAGE:$IMAGE_TAG
+    #- docker pull $AR_IMAGE:$IMAGE_TAG
+    #- docker tag $AR_IMAGE:$IMAGE_TAG $AR_IMAGE:$IMAGE_TAG
     - docker push $AR_IMAGE:$IMAGE_TAG
 
 deploy-to-cloud-run:
@@ -33,7 +33,7 @@ deploy-to-cloud-run:
   image: google/cloud-sdk:latest
   script:
     - gcloud auth activate-service-account --key-file=$GCP_SERVICE_KEY
-    - gcloud run deploy landing-page 
+    - gcloud run deploy landing-page
         --image $AR_IMAGE:$IMAGE_TAG 
         --project braided-hangout-438006-k2 
         --region asia-northeast1 
