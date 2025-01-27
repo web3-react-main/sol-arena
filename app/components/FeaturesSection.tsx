@@ -105,7 +105,7 @@ const FeaturesSection: React.FC<FeaturesSection> = ({
               alt="alt"
               width={360}
               height={600}
-              className={` ${isActive ? "w-[100%] h-[100%]" : "w-[360px] h-[600px]"} max-w-[360px] rounded-lg`}
+              className={` w-[100%] h-[100%] max-w-[360px] rounded-lg`}
             />
           </div>
           <Image
@@ -134,7 +134,7 @@ const FeaturesSection: React.FC<FeaturesSection> = ({
           />
         </div>
         <div
-          className={` z-10 text-white flex flex-col absolute bottom-[-36px] md:bottom-[45px] left-[26.5px] md:left-[-71px] ${isActive ? "block" : " block md:hidden"} `}
+          className={` z-10 text-white flex flex-col absolute bottom-[-36px] md:bottom-[45px] left-[27.5px] md:left-[-71px] ${isActive ? "block" : " block md:hidden"} `}
         >
           <div
             className="w-[136px] md:w-[194px] h-[26px] md:h-[42px] flex justify-start items-center pl-4 bg-center bg-no-repeat font-[Montserrat] font-semibold text-[12px] md:text-[20px]"

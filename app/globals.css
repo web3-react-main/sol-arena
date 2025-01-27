@@ -47,12 +47,12 @@ body {
 }
 
 .section {
-
   background-size: 100% 100%;
 }
 
 .footer {
   background-size: 100% 750px;
+  background-position: top center;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -71,12 +71,16 @@ body {
 }
 
 /* bg-[url('/assets/hero-img-mobile.webp')] sm:bg-[url('/assets/hero-img.webp')] */
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 640px) {
   .hero-section {
     background-image: url("/assets/hero-img-mobile.webp");
     height: 764px;
     background-size: 100% 100%;
   }
+}
+
+#card-content {
+  scroll-behavior: smooth;
 }
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
