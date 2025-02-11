@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { sendEvent } from "@/app/googleTag";
 
 const Header: React.FC = () => {
   const navigator = useRouter();
@@ -70,7 +71,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <div className="w-full bg-[#02021D] fixed top-0 left-0 z-50">
+      <div className="w-full bg-[#02021D] fixed top-0 left-0 z-[60]">
         <div
           className="max-w-[1440px] h-[72px] m-[auto] flex flex-row justify-between items-center bg-no-repeat bg-right-top pl-0 pr-0 relative"
           style={{
@@ -142,12 +143,12 @@ const Header: React.FC = () => {
               HOME
             </Link>
             <Link
-              href={"/play"}
+              href={"/how"}
               prefetch
               className="text-[#CAD4EF] w-[192px] lg:w-[140px] h-11 lg:h-10 flex flex-row justify-center items-center rounded-[50px] transition-all"
               style={{
                 backgroundColor:
-                  pathname == "/play"
+                  pathname == "/how"
                     ? "#603CDB"
                     : isMenuPlay == 2
                       ? "#3B258F"
@@ -223,14 +224,14 @@ const Header: React.FC = () => {
               } `}
           >
             <button
-              className={` w-[163px] h-[52px] transition-all ${isScroll ? "lg:w-[150px] lg:h-[48px] lg:text-[21px]" : "lg:w-[264px] lg:h-[84px] lg:text-[38px]"} rounded-md font-bold font-[Oswald] text-[28px] text-[#020215] `}
+              className={` w-[163px] h-[52px] transition-all ${isScroll ? "lg:w-[150px] lg:h-[48px] lg:text-[21px]" : "lg:w-[264px] lg:h-[84px] lg:text-[38px]"} rounded-md font-bold font-[Oswald] text-[26px] text-[#020215] `}
               style={{
                 backgroundImage: "url(./assets/play-now-btn.png)",
                 backgroundSize: "100% 100%",
                 boxShadow: "0px 0px 20px 3px",
               }}
               onClick={() => {
-                effectPlayButton();
+                sendEvent('play-now', {}, () => effectPlayButton());
               }}
             >
               PLAY NOW

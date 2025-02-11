@@ -7,9 +7,9 @@ const Page: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <>
-      <LeftBar isOpen={isOpen} />
+      <LeftBar isOpen={isOpen} setIsOpen={setIsOpen} />
       <RightContent className="pt-20" />
-      <div className="md:hidden block">
+      <div className="block lg:hidden">
         <Panel isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </>
